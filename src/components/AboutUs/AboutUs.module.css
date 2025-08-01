@@ -1,0 +1,57 @@
+.aboutContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* On larger screens, we switch to a two-column layout */
+@media (min-width: 992px) {
+  .aboutContent {
+    grid-template-columns: 2fr 1.5fr;
+  }
+}
+
+.heading {
+  font-size: 2.5rem;
+  color: var(--navy-blue);
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.legacy p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.missionVision {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--background-dark);
+  padding: 2rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(43, 45, 66, 0.08);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--navy-blue);
+  font-size: 1.5rem;
+}
+
+.card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}

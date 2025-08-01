@@ -1,0 +1,41 @@
+.clientsSection {
+  background-color: var(--background-dark);
+  text-align: center;
+}
+
+.mainHeading {
+  font-size: 2.5rem;
+  color: var(--navy-blue);
+  margin-bottom: 1rem;
+}
+
+.subheading {
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.logoGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem; /* Increased gap for better spacing */
+}
+
+.logo {
+  font-size: 1.2rem;
+  color: var(--metallic-grey);
+  font-weight: 500;
+  /* These styles are for when we add actual image logos */
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}

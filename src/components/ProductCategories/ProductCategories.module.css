@@ -1,0 +1,56 @@
+.mainHeading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--navy-blue);
+    margin-bottom: 3rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--background-light);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.imagePlaceholder {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    opacity: 0.8;
+    padding: 1rem; /* Added padding for more space */
+    text-align: center; /* Ensures wrapped text is centered */
+}
+
+.content {
+    padding: 1.5rem;
+    flex-grow: 1; /* Allows content to take up remaining space */
+}
+
+.content h3 {
+    margin-top: 0;
+    color: var(--navy-blue);
+}
+
+.content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}

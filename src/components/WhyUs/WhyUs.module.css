@@ -1,0 +1,47 @@
+.mainHeading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--navy-blue);
+  margin-bottom: 3rem;
+}
+
+.grid {
+  display: grid;
+  /* We'll aim for 2 columns, but it will adjust on smaller screens */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.reasonCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--background-dark);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reasonCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+}
+
+.tick {
+  font-size: 1.5rem;
+}
+
+.reasonCard p {
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+/* On smaller screens, make the grid single-column */
+@media (max-width: 400px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,76 @@
+.capabilitiesSection {
+    background-color: var(--background-dark);
+}
+
+.mainHeading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--navy-blue);
+    margin-bottom: 3rem;
+}
+
+.table {
+    border: 1px solid #dde6f1;
+    border-radius: 8px;
+    overflow: hidden; /* This is to make the border-radius work on the corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    background-color: var(--background-light);
+}
+
+.tableHeader {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: var(--navy-blue);
+    color: white;
+    font-weight: 600;
+}
+
+.headerCell {
+    padding: 1rem 1.5rem;
+}
+
+.tableRow {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-top: 1px solid #dde6f1;
+}
+
+.tableRow:hover {
+    background-color: #f9fcff;
+}
+
+.processCell, .detailsCell {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.processCell {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.detailsCell {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Responsive adjustments for the table on small screens */
+@media (max-width: 600px) {
+    .tableHeader {
+        display: none; /* Hide the header on small screens */
+    }
+    .tableRow, .tableHeader {
+        grid-template-columns: 1fr; /* Stack the columns */
+    }
+    .processCell {
+        background-color: #eef2f7;
+        padding-bottom: 0.5rem;
+    }
+    .detailsCell {
+        padding-top: 0.5rem;
+    }
+    .tableRow {
+        border-bottom: 2px solid #dde6f1;
+    }
+}
