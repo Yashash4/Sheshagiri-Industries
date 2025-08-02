@@ -1,56 +1,129 @@
-.mainHeading {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--navy-blue);
-    margin-bottom: 3rem;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-}
-
-.card {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: var(--background-light);
+/* --- SECTION STYLES (LIGHT THEME) --- */
+.productSection {
+    position: relative;
     display: flex;
-    flex-direction: column;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
-
-.imagePlaceholder {
-    height: 200px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    opacity: 0.8;
-    padding: 1rem; /* Added padding for more space */
-    text-align: center; /* Ensures wrapped text is centered */
+    align-items: center;
+    background-color: var(--background-light);
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    border-top: 1px solid #e0e0e0;
 }
 
 .content {
-    padding: 1.5rem;
-    flex-grow: 1; /* Allows content to take up remaining space */
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: min(1200px, 95%);
+    z-index: 10;
 }
 
-.content h3 {
-    margin-top: 0;
+.info {
+    flex-basis: 40%;
+}
+
+.mainHeading {
     color: var(--navy-blue);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
-.content p {
+.info p {
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.navButton {
+    padding: 10px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.navButton:hover {
+    background: var(--navy-blue);
+    color: #fff;
+    border-color: var(--navy-blue);
+}
+
+/* --- SWIPER STYLES --- */
+
+.swiper {
+    width: 60%;
+    height: 500px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.swiperSlide {
+    width: 320px;
+    height: 420px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.5s ease; 
+}
+
+/* --- THIS IS THE ADJUSTED RULE --- */
+/* A more subtle scaling effect for the active slide. */
+.swiperSlide.swiper-slide-active {
+    transform: scale(1.08); /* Reduced from 1.15 */
+}
+/* --- END OF ADJUSTMENT --- */
+
+
+.swiperSlide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 10%, transparent);
+    color: white;
+}
+
+.overlay h2 {
     margin: 0;
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 960px) {
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .info {
+        align-items: center;
+    }
+    .swiper {
+        width: 100%;
+        height: 450px;
+    }
+    .swiperSlide {
+        width: 280px;
+        height: 380px;
+    }
 }
