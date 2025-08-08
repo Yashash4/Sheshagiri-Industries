@@ -1,47 +1,67 @@
 .mainHeading {
   text-align: center;
-  font-size: 2.5rem;
-  color: var(--navy-blue);
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: var(--text-primary);
   margin-bottom: 3rem;
 }
 
 .grid {
   display: grid;
-  /* We'll aim for 2 columns, but it will adjust on smaller screens */
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: 1fr; /* Single column on mobile */
   gap: 1.5rem;
+}
+
+/* Switch to 2 columns on tablets */
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Switch to 3 columns on desktops for a wider layout */
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .reasonCard {
   display: flex;
   align-items: center;
   gap: 1rem;
-  background-color: var(--background-dark);
+  background-color: #2a2b2f; /* Dark card background */
   padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  border: 1px solid #333;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .reasonCard:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.tick {
-  font-size: 1.5rem;
+.iconWrapper {
+  background-color: rgba(243, 156, 18, 0.1); /* Faint accent color background */
+  color: var(--accent); /* Golden Orange icon color */
+  border-radius: 50%;
+  width: 40px; /* Larger icon circle */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tickIcon {
+  width: 20px;
+  height: 20px;
 }
 
 .reasonCard p {
   margin: 0;
   font-weight: 500;
-  line-height: 1.5;
-  color: var(--text-primary);
-}
-
-/* On smaller screens, make the grid single-column */
-@media (max-width: 400px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
+  line-height: 1.6;
+  color: var(--text-primary); /* White text */
 }

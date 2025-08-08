@@ -25,7 +25,7 @@ function App() {
       <QualityAssurance />
       <Sustainability />
       <ContactUs />
-      <Footer />
+      <Footer />  
     </>
   );
 }

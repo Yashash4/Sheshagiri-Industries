@@ -1,13 +1,15 @@
-/* Color Palette Variables */
+/* Color Palette Variables - Apex Fashion Lab Inspired */
 :root {
-  --navy-blue: #0A2239;
-  --metallic-grey: #8D99AE;
-  --deep-forest-green: #1B4332;
-  --background-light: #FFFFFF;
-  --background-dark: #F4F7F9;
-  --text-primary: #2B2D42;
-  --text-secondary: #5a5a5a;
-  --accent: var(--deep-forest-green);
+  /* Core Palette */
+  --background-main: #1a1a1a; /* Dark Charcoal */
+  --text-primary: #FFFFFF;     /* Bright White */
+  --accent: #F39C12;           /* Golden Orange */
+  
+  /* Supporting Shades */
+  --background-light: #FFFFFF; /* For light sections like forms */
+  --background-dark: #f4f4f5;  /* For slightly off-white sections */
+  --text-dark: #1a1a1a;         /* For text on light backgrounds */
+  --text-secondary: #888888;   /* Medium Grey for subtitles/less important text */
 }
 
 body {
@@ -17,7 +19,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--background-light);
+  
+  /* Set the new default background and text colors */
+  background-color: var(--background-main);
   color: var(--text-primary);
 }
 

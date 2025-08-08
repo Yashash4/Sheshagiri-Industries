@@ -1,18 +1,19 @@
 .clientsSection {
-  background-color: var(--background-dark);
+  background-color: var(--background-main); /* Changed to dark theme */
   text-align: center;
 }
 
 .mainHeading {
-  font-size: 2.5rem;
-  color: var(--navy-blue);
+  font-family: 'Playfair Display', serif; /* Elegant font */
+  font-size: 2.8rem;
+  color: var(--text-primary); /* Changed to white */
   margin-bottom: 1rem;
 }
 
 .subheading {
   max-width: 600px;
   margin: 0 auto 3rem auto;
-  color: var(--text-secondary);
+  color: var(--text-secondary); /* Changed to grey */
   font-size: 1.1rem;
   line-height: 1.6;
 }
@@ -22,20 +23,27 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 4rem; /* Increased gap for better spacing */
+  gap: 4rem;
 }
 
-.logo {
-  font-size: 1.2rem;
-  color: var(--metallic-grey);
-  font-weight: 500;
-  /* These styles are for when we add actual image logos */
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: filter 0.3s ease, opacity 0.3s ease;
+.logoWrapper img {
+  height: 100px; 
+  width: auto;
+  /* --- THIS IS THE CHANGE: Grayscale filter removed --- */
+  opacity: 0.9; /* Slightly transparent by default */
+  transition: opacity 0.3s ease;
 }
 
-.logo:hover {
-    filter: grayscale(0%);
-    opacity: 1;
+.logoWrapper img:hover {
+    opacity: 1; /* Fully opaque on hover */
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .logoGrid {
+        gap: 2.5rem; 
+    }
+    .logoWrapper img {
+        height: 50px; 
+    }
 }

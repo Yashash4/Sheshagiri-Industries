@@ -1,6 +1,15 @@
 import React from 'react';
 import styles from './OurClients.module.css';
 
+// Array of local logo paths
+const clientLogos = [
+    '/images/logo1.png',
+    '/images/logo2.png',
+    '/images/logo3.png',
+    '/images/logo4.png',
+    '/images/logo5.png',
+];
+
 const OurClients = () => {
   return (
     <section className={styles.clientsSection}>
@@ -10,12 +19,12 @@ const OurClients = () => {
           We have proudly partnered with leading retail chains, international buyers, and fashion startups across diverse markets.
         </p>
         <div className={styles.logoGrid}>
-          {/* We will replace these with actual client logos later */}
-          <div className={styles.logo}>Client Logo 1</div>
-          <div className={styles.logo}>Client Logo 2</div>
-          <div className={styles.logo}>Client Logo 3</div>
-          <div className={styles.logo}>Client Logo 4</div>
-          <div className={styles.logo}>Client Logo 5</div>
+          {/* Loop through the logos array and display each image */}
+          {clientLogos.map((logoUrl, index) => (
+            <div className={styles.logoWrapper} key={index}>
+              <img src={logoUrl} alt={`Client Logo ${index + 1}`} />
+            </div>
+          ))}
         </div>
       </div>
     </section>

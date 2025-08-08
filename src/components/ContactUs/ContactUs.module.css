@@ -1,121 +1,225 @@
+/* General Section Styling */
 .contactSection {
-    background-color: var(--background-dark);
+  background-color: #1a1a1a;
+  padding: 40px 15px; /* Added horizontal padding for small screens */
+  font-family: 'Poppins', sans-serif;
+  color: #f1f1f1;
+  box-sizing: border-box; /* Ensures padding is included in width calculation */
+}
+@media (min-width: 768px) {
+  .contactSection {
+    padding: 80px 0;
+  }
 }
 
-.mainHeading {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--navy-blue);
-    margin-bottom: 1rem;
+/* Main Container: Controls overall layout */
+.contactContainer {
+  max-width: 1100px;
+  margin: 0 auto;
+  /* width: 90%; REMOVED to allow it to be 100% of the padded parent on mobile */
+  display: grid;
+  grid-template-columns: 1fr;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #2a2b2f;
+}
+@media (min-width: 992px) {
+  .contactContainer {
+    grid-template-columns: 45% 55%;
+  }
 }
 
-.subheading {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 3rem auto;
-    color: var(--text-secondary);
+/* Left Column: Contact Info */
+.infoSide {
+  position: relative;
+  padding: 1.5rem; /* Slightly reduced padding for mobile */
+  color: #ffffff;
+  background-image: url('https://placehold.co/1000x800/2a2b2f/808080?text=Factory+Image');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
 }
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    background-color: white;
+.infoSide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 26, 26, 0.85);
+  z-index: -1;
+}
+@media (min-width: 992px) {
+  .infoSide {
     padding: 3rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 25px rgba(0,0,0,0.07);
+  }
 }
 
-@media(min-width: 992px) {
-    .grid {
-        grid-template-columns: 1fr 1fr;
+.heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .heading {
+    font-size: 2.2rem;
+  }
+}
+
+/* Individual Info Items (Address, Email, Phone) */
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.iconWrapper {
+  color: #f39c12;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.infoItem h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+.infoItem p, .infoItem a {
+  margin: 0;
+  color: #cccccc;
+  text-decoration: none;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  /* CRITICAL FIX: Ensures all long text wraps correctly */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all; /* More aggressive wrapping for emails */
+}
+.infoItem a:hover {
+  color: #f39c12;
+  text-decoration: underline;
+}
+
+/* Action Buttons at the bottom */
+.actionButtons {
+  margin-top: auto;
+  padding-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.button {
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: #f39c12;
+  color: #1a1a1a;
+  border-color: #f39c12;
+}
+.primary:hover {
+  background-color: #ffb833;
+  border-color: #ffb833;
+}
+
+.secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #555;
+}
+.secondary:hover {
+  background-color: #f39c12;
+  color: #1a1a1a;
+  border-color: #f39c12;
+}
+
+/* Right Column: Form */
+.formSide {
+  padding: 1.5rem; /* Slightly reduced padding for mobile */
+  background-color: #2a2b2f;
+}
+@media (min-width: 992px) {
+  .formSide {
+    padding: 3rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Reduced gap for mobile */
+}
+@media (min-width: 768px) {
+    .form {
+        gap: 1.5rem;
     }
 }
 
-.details h3 {
-    color: var(--navy-blue);
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-}
 
-.details p {
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem; /* Reduced gap for mobile */
 }
-
-.details a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 500;
-}
-.details a:hover {
-    text-decoration: underline;
-}
-
-.contactButtons {
-    margin-top: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-/* --- MODIFICATION IS HERE --- */
-/* We are being more specific to ensure the color is applied */
-.contactButtons a.button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    background-color: var(--accent);
-    color: white; /* Forcing the text color to be white */
-    border: 2px solid var(--accent);
-    text-align: center;
-}
-
-.contactButtons a.button:hover {
-    background-color: #153628;
-}
-/* --- END OF MODIFICATION --- */
-
-
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+@media (min-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
 }
 
 .form input, .form textarea {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    box-sizing: border-box; 
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #333438;
+  color: #f1f1f1;
 }
-
+.form input::placeholder, .form textarea::placeholder {
+  color: #888;
+}
 .form input:focus, .form textarea:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 2px #d4e9e2;
+  outline: none;
+  border-color: #f39c12;
+  box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.2);
 }
 
-.submitButton {
-    padding: 15px 30px;
-    border-radius: 5px;
-    border: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    background-color: var(--navy-blue);
-    color: white;
-    cursor: pointer;
-    font-size: 1rem;
-    text-align: center;
+/* Map Section */
+.mapContainer {
+  margin-top: 3rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+  line-height: 0;
+  filter: invert(1) hue-rotate(180deg);
 }
-
-.submitButton:hover {
-    background-color: #071a2d;
+.mapContainer iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+}
+@media (min-width: 768px) {
+  .mapContainer iframe {
+    height: 450px;
+  }
 }

@@ -1,13 +1,9 @@
 import React, { useState, useRef } from 'react';
-
-// Import Swiper React components and styles
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
-// Import required modules
 import { EffectCoverflow, Navigation } from 'swiper/modules';
-
 import styles from './ProductCategories.module.css';
 
 const categories = [
@@ -19,19 +15,16 @@ const categories = [
     { 
         name: "Womenswear", 
         description: "An elegant range of tops, blouses, dresses, and co-ord sets. We bring contemporary designs to life with a focus on quality and detail.",
-        // --- NEW, WORKING IMAGE LINK ---
         image: "https://images.pexels.com/photos/3755919/pexels-photo-3755919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     { 
         name: "Kidswear", 
         description: "Vibrant and comfortable apparel for children, including durable shirts, dresses, and denimwear, made with safe, high-quality materials.",
-        // --- NEW, WORKING IMAGE LINK ---
         image: "https://images.pexels.com/photos/5623675/pexels-photo-5623675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     { 
         name: "Uniforms", 
         description: "Durable and professional uniforms for corporate, hospitality, and institutional clients, designed for comfort and long-lasting wear.",
-        // --- NEW, WORKING IMAGE LINK ---
         image: "https://images.pexels.com/photos/7144171/pexels-photo-7144171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
 ];
@@ -66,8 +59,8 @@ const ProductCategories = () => {
                     effect="coverflow"
                     grabCursor={true}
                     centeredSlides={true}
-                    slidesPerView={3}
                     loop={true}
+                    slidesPerView={'auto'}
                     coverflowEffect={{
                         rotate: 0,
                         stretch: 0,
@@ -82,6 +75,17 @@ const ProductCategories = () => {
                     onBeforeInit={(swiper) => {
                         swiper.params.navigation.prevEl = prevRef.current;
                         swiper.params.navigation.nextEl = nextRef.current;
+                    }}
+                    // --- NEW RESPONSIVE SETTINGS ---
+                    breakpoints={{
+                        // when window width is >= 768px
+                        768: {
+                            slidesPerView: 3,
+                        },
+                        // when window width is < 768px
+                        0: {
+                            slidesPerView: 1.5,
+                        }
                     }}
                 >
                     {loopedCategories.map((cat, index) => (
